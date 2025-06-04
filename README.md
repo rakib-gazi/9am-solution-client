@@ -9,10 +9,17 @@ Backend (Express + MongoDB): [https://github.com/rakib-gazi/9am-solution-server]
 ---
 ## API 
 
-**1. Sign up  (POST)** : https://mern-server-nu.vercel.app/users
-**2. Sign In  (POST)** : https://mern-server-nu.vercel.app/auth/signin
-**3. Verify Token  (POST)** : https://mern-server-nu.vercel.app/auth/verify-token
-**3. Sign Out  (POST)** : https://mern-server-nu.vercel.app/auth/signout
+**1. Sign up (POST)**  
+https://mern-server-nu.vercel.app/users
+
+**2. Sign In (POST)**  
+https://mern-server-nu.vercel.app/auth/signin
+
+**3. Verify Token (POST)**  
+https://mern-server-nu.vercel.app/auth/verify-token
+
+**4. Sign Out (POST)**  
+https://mern-server-nu.vercel.app/auth/signout
 
 ---
 ## Features
@@ -62,19 +69,19 @@ npm run dev
 ---
 ---
 
-##  Tech Stack
-```
-| Layer           | Tech                                       |
-|---------------|------------------------------------|
-| Frontend      | React 19, Vite                         |
-| Styling         | Tailwind CSS v4, Flowbite        |
-| Routing        | React Router v7                      |
-| Forms          | React Hook Form                     |
-| API Calls      | Axios                                      |
-| Alerts          | SweetAlert2                             |
-| Animations  | React Spinners                         |
-| Auth           | JWT-based with cookie sessions |
-```
+## Tech Stack
+
+| Layer        | Tech                                      |
+|--------------|-------------------------------------------|
+| Frontend     | React 19, Vite                            |
+| Styling      | Tailwind CSS v4, Flowbite                 |
+| Routing      | React Router v7                           |
+| Forms        | React Hook Form                           |
+| API Calls    | Axios                                     |
+| Alerts       | SweetAlert2                               |
+| Animations   | React Spinners                            |
+| Auth         | JWT-based with cookie sessions            |
+
 
 ---
 ## Live Demo
