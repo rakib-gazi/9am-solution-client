@@ -1,12 +1,85 @@
-# React + Vite
+# 9am Solution – MERN Stack Authentication & Shop Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack MERN application that supports user authentication, session management, and dynamic shop-specific dynamic  subdomains.
 
-Currently, two official plugins are available:
+##  Repository
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Frontend (Vite + React): [https://github.com/rakib-gazi/9am-solution-client](https://github.com/rakib-gazi/9am-solution-client)  
+Backend (Express + MongoDB): [https://github.com/rakib-gazi/9am-solution-server](https://github.com/rakib-gazi/9am-solution-server)  
+---
+## API 
 
-## Expanding the ESLint configuration
+**1. Sign up  (POST)** : https://mern-server-nu.vercel.app/users
+**2. Sign In  (POST)** : https://mern-server-nu.vercel.app/auth/signin
+**3. Verify Token  (POST)** : https://mern-server-nu.vercel.app/auth/verify-token
+**3. Sign Out  (POST)** : https://mern-server-nu.vercel.app/auth/signout
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+## Features
+
+###  1. **Signup Page**
+- Signup form includes:
+  - Username
+  - Password (validated: min 8 characters, at least 1 number and 1 special character)
+  - At least 3 Shop Names (stored as an array)
+- Shop name validation:
+  - Shop names must be **globally unique** across all users.
+- Secure password storage and input validation.
+
+###  2. **Signin Page**
+- Login using username and password.
+- "Remember Me" option:
+  - If selected: session lasts **7 days**.
+  - Otherwise: session expires in **30 minutes**.
+- Validation messages for wrong credentials.
+
+### 3. **Dashboard**
+- Simple placeholder dashboard.
+- Profile icon dropdown includes:
+  - Shop names entered at signup.
+  - Logout button with confirmation.
+
+### 4. **Shop-Specific Dashboard with Dynamic Subdomains**
+- Clicking a shop name should open a subdomain : worked but not passed Auth info, but token set after reload.
+
+---
+
+## Setup Instructions
+
+### 1. Clone Repos
+```
+git clone https://github.com/rakib-gazi/9am-solution-client.git
+cd 9am-solution-client
+```
+### 2. Install Dependencies
+```
+npm install
+```
+### 2. Run the Client
+```
+npm run dev
+```
+---
+---
+
+##  Tech Stack
+```
+| Layer           | Tech                                       |
+|---------------|------------------------------------|
+| Frontend      | React 19, Vite                         |
+| Styling         | Tailwind CSS v4, Flowbite        |
+| Routing        | React Router v7                      |
+| Forms          | React Hook Form                     |
+| API Calls      | Axios                                      |
+| Alerts          | SweetAlert2                             |
+| Animations  | React Spinners                         |
+| Auth           | JWT-based with cookie sessions |
+```
+
+---
+## Live Demo
+[https://shop-hub-auth.netlify.app/]
+
+---
+
+Thank You.

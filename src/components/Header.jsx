@@ -13,6 +13,7 @@ import {
 import useAuth from "../hooks/useAuth";
 import useAxiosPublic from "../hooks/useAxiosPublic";
 import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Header = () => {
   const protocol = window.location.protocol;
@@ -20,10 +21,31 @@ const Header = () => {
   const axiosPublic = useAxiosPublic();
   const navigate = useNavigate();
   const handleSignOut = async () => {
-    await axiosPublic.post("/auth/signout", {}, { withCredentials: true });
-    setUser(null);
-    navigate("/signin");
+    const result = await Swal.fire({
+      title: "Are you sure?",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, sign out!"
+    });
+
+    if (result.isConfirmed) {
+      try {
+        await axiosPublic.post("/auth/signout", {}, { withCredentials: true });
+        setUser(null);
+        await Swal.fire({
+          title: "Signed out!",
+          text: "You have been signed out successfully.",
+          icon: "success"
+        });
+        navigate("/signin");
+      } catch (error) {
+        Swal.fire("Error", "Sign out failed. Try again.",error);
+      }
+    }
   };
+
 
   return (
     <Navbar className="bg-white text-black dark:bg-white shadow-md sticky top-0 z-50 ">
